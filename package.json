@@ -16,7 +16,8 @@
   },
   "scripts": {
     "serve": "cd example; npm run dev",
-    "build": "rollup -cw"
+    "build": "rollup -c",
+    "build:watch": "rollup -cw"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^22.0.0",

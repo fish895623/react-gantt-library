@@ -4,7 +4,11 @@ import { Gantt } from "react-gantt-library";
 const Home: NextPage = () => {
   return (
     <>
-      <Gantt></Gantt>
+      <Gantt
+        label="label..."
+        start_date={new Date("2017-01-26").toString()}
+        due_date={new Date().toString()}
+      />
     </>
   );
 };
