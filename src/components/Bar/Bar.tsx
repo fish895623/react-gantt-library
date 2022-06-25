@@ -1,11 +1,11 @@
 import React from "react";
 
-export interface ButtonPropss {
-  label: string;
-}
-
-const Bar = (props: ButtonPropss) => {
-  return <>Hello World{props.label}</>;
+const Bar = () => {
+  return (
+    <>
+      <rect>asf</rect>
+    </>
+  );
 };
 
 export default Bar;
