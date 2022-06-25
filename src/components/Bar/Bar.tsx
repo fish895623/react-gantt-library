@@ -1,10 +1,10 @@
 import React from "react";
-import "./styles.css";
+import "./styles.scss";
 
 const Bar = () => {
   return (
     <>
-      <rect>asf</rect>
+      <div className="rect0"></div>
     </>
   );
 };
