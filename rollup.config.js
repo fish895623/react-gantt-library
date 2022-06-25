@@ -2,6 +2,9 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
+import postcss from "rollup-plugin-postcss";
+import cssimport from "postcss-import";
+import autoprefixer from "autoprefixer";
 
 const packageJson = require("./package.json");
 
@@ -24,11 +27,15 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      postcss({
+        plugins: [cssimport(), autoprefixer()],
+      }),
     ],
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
+    external: [/\.css$/],
     plugins: [dts()],
   },
 ];
